@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}home page {% endblock %}
+
+{% block content %}
+<h2 xmlns="http://www.w3.org/1999/html">Welcome To ABC Hospital </h2>
+<h3>About Us</h3>
+<p>This is COVID-19 Special Hospital For Better Treamemnts Of patients</p>
+<p>Feel Free To Call Us : 88881111 (TollFreeNo.)</p>
+<div>
+      <h2>For New Patients:</h2>
+    <table>
+      <tr>
+          <td>For New Patient Registration</td> <td><button><a href="{{url_for('patientreg')}}"> Click Here </a></button></td>
+      </tr>
+      <tr>
+          <td>To Update Patient Information</td><td><button> <a href="{{url_for('patientrecord')}}">Click Here</a></button></td>>
+      </tr>
+      <tr>
+          <td>To Delete Patient Information</td><td> <button> <a href="{{url_for('patientrecord')}}">Click Here</a></button></td>>
+      </tr>
+      <tr>
+          <td>To See the Patient Record</td><td> <button><a href="{{url_for('patientrecord')}}">Click Here</a></button></td>
+      </tr>
+    </table>
+</div>
+
+{% endblock %}

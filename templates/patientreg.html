@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block title %}Registration Page {% endblock %}
+{% block content %}
+<h2>{{ msg }}</h2>
+
+<form action="{{'patientreg'}}" method="POST">
+        <table>
+            <tr>
+            <td>Patient SSN Id:</td>
+            <td> <input type="text" name="ssnid" placeholder="SSN Id" required="required"></td>
+            </tr>
+            <tr>
+            <td>Patient Name:</td>
+            <td><input type="text" name="pname" placeholder="patient name" required></td>
+            </tr>
+            <tr>
+            <td>Age:</td>
+            <td><input type="text" name="age" placeholder="age" required="required"></td>
+            </tr>
+            <tr>
+            <td>Date Of Admission:</td>
+            <td><input type="date" name="adddate" placeholder="Date of admission" required="required"></td>
+            </tr>
+            <tr>
+            <td>Address:</td>
+            <td><input type="text" name="add" placeholder="address" required="required"></td>
+            </tr>
+            <tr>
+            <td>City:</td>
+            <td><input type="text" name="city" placeholder="city" required="required"></td>
+            </tr>
+            <tr>
+            <td>State:</td>
+            <td><input type="text" name="state" placeholder="state" value="Maharashtra"></td>
+            </tr>
+            <tr>
+                <td>Type Of Bed:</td>
+                <td><input type="search"  list="list1" name="bedtype" required="required" multiple="multiple"></td>
+                <datalist id="list1">
+                    <option >General Ward</option>
+                    <option >Semi Sharing</option>
+                    <option >Single Room</option>
+                </datalist>
+            </tr>
+            <tr>
+            <td><input type="submit" name="submit" value="Register" required="required"></td>
+            </tr>
+        </table>
+</form>
+
+{% endblock %}

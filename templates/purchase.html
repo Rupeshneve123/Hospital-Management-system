@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}Purchase Page {% endblock %}
+{% block content %}
+<h2>{{ msg }}</h2>
+
+<form action="{{'purchase'}}" method="POST">
+        <table>
+            <tr>
+            <td>Medicine Name:</td>
+            <td> <input type="text" name="medicine" placeholder="Medicine name" required="required"></td>
+            </tr>
+            <tr>
+            <td>Medicine Quantity:</td>
+            <td> <input type="number" name="medquan" placeholder="Medicine quantity" required="required"></td>
+            </tr>
+
+            <tr>
+            <td><input type="submit" name="submit" value="purchase" required="required"></td>
+            </tr>
+        </table>
+</form>
+<h2>Price Of Medicine</h2>
+<h2>&#8360; .{{ rate }}</h2>
+
+<h2><button><a href="{{url_for('issuemed')}}">Add Medicines</a></button></h2>
+
+{% endblock %}

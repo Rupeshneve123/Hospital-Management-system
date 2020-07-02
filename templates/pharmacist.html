@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pharmacist{% endblock %}
+
+{% block content %}
+<h2>Pharmacist Page</h2>
+<div>
+    <p>Please Enter Patients SSN ID:</p>
+    <form action="{{'pharmacist'}}" method="POST">
+      <table>
+        <tr>
+            <td>SSNID:</td>
+            <td><input type="text" name="ssnid" placeholder="SSN Id" required="required"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" value="Get Details" required="required"></td>
+        </tr>
+      </table>
+    </form>
+</div>
+<div>
+<table border=1 style="width:100%">
+  <tr>
+      <th>Patient Id</th>
+      <th>SSNID</th>
+      <th>Patient name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>state</th>
+      <th>type_of_bed</th>
+  </tr>
+  <tr>
+      {% for row in value%}
+      <td>{{row.patientId}}</td>
+      <td>{{row.ssnid}}</td>
+      <td>{{row.patientname}}</td>
+      <td>{{row.age}}</td>
+      <td>{{row.address}}</td>
+      <td>{{row.city}}</td>
+      <td>{{row.state}}</td>
+      <td>{{row.typeofbed}}</td>
+
+  </tr>
+      {%endfor%}
+</table>
+
+
+</div>
+<button><a href="{{'issuemed'}}">Issue Medicines </a> </button>
+{% endblock %}

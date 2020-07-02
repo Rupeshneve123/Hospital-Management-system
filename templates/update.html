@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block title %}update Page {% endblock %}
+{% block content %}
+<h2>{{ msg }}</h2>
+
+<form action="{{'update'}}" method="POST">
+        <table>
+            <tr>
+            <td>SSN ID:</td>
+            <td><input type="text" name="ssnid" value="" placeholder="patient name" ></td>
+            </tr>
+
+            <tr>
+            <td>Patient Name:</td>
+            <td><input type="text" name="pname" value="" placeholder="patient name" ></td>
+            </tr>
+            <tr>
+            <td>Age:</td>
+            <td><input type="text" name="age" placeholder="age" ></td>
+            </tr>
+            <tr>
+            <td>Date Of Admission:</td>
+            <td><input type="date" name="adddate" placeholder="Date of admission" ></td>
+            </tr>
+            <tr>
+            <td>Address:</td>
+            <td><input type="text" name="add" placeholder="address" ></td>
+            </tr>
+            <tr>
+            <td>City:</td>
+            <td><input type="text" name="city" placeholder="city" ></td>
+            </tr>
+            <tr>
+            <td>State:</td>
+            <td><input type="text" name="state" placeholder="state" value="Maharashtra"></td>
+            </tr>
+            <tr>
+                <td>Type Of Bed:</td>
+                <td><input type="search"  list="list1" name="bedtype"  multiple="multiple"></td>
+                <datalist id="list1">
+                    <option >General Ward</option>
+                    <option >Semi Sharing</option>
+                    <option >Single Room</option>
+                </datalist>
+            </tr>
+            <tr>
+            <td><input type="submit" name="submit" value="Update" required="required"></td>
+            </tr>
+            <tr>
+            <td><input type="reset" name="reset" value="Reset" required="required"></td>
+            </tr>
+        </table>
+</form>
+
+{% endblock %}

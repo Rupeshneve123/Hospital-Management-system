@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}patient record page {% endblock %}
+
+{% block content %}
+<h2>{{msg}}</h2>
+<div>
+<table border=1 style="width:100%">
+  <tr>
+
+      <th>SSNID</th>
+      <th>Patient name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>state</th>
+      <th>type_of_bed</th>
+      <th>Update</th>
+      <th>Delete</th>
+  </tr>
+  <tr>
+      {% for row in value%}
+      <td>{{row.ssnid}}</td>
+      <td>{{row.patientname}}</td>
+      <td>{{row.age}}</td>
+      <td>{{row.address}}</td>
+      <td>{{row.city}}</td>
+      <td>{{row.state}}</td>
+      <td>{{row.typeofbed}}</td>
+      <td><a href="{{url_for('update')}}"><button>Update</button></a></td>
+      <td><a href="{{url_for('delete')}}"><button>Delete</button></a></td>
+
+  </tr>
+      {%endfor%}
+</table>
+</div>
+
+{% endblock %}

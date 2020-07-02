@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block title %}Issue Medicine page {% endblock %}
+
+{% block content %}
+<h2>{{msg}}</h2>
+<form action="{{'issuemed'}}" method="POST">
+        <table>
+            <tr>
+            <td>Medicine Name:</td>
+            <td> <input type="text" name="medicine" placeholder="Medicine name" required="required"></td>
+            </tr>
+
+            <tr>
+            <td><input type="submit" name="submit" value="Check Availability" required="required"></td>
+            </tr>
+        </table>
+</form>
+
+<div>
+    <h2>Stock:</h2>
+<table border=1 style="width:100%">
+  <tr>
+      <th>Medicine Id</th>
+      <th>Medicine Name</th>
+      <th>Quantity Available</th>
+      <th>rate Of medicine</th>
+  </tr>
+  <tr>
+      {% for row in value%}
+      <td>{{row.medicine_id}}</td>
+      <td>{{row.medicine_name}}</td>
+      <td>{{row.quant_available}}</td>
+      <td>{{row.rate_of_medicine}}</td>
+  </tr>
+      {%endfor%}
+
+</table>
+    <br>
+    <table>
+      <tr>
+          <td><button><a href="{{'purchase'}}"> Purchase </a></button></td>
+      </tr>
+    </table>
+
+
+</div>
+{% endblock %}

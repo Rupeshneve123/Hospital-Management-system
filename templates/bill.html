@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}Billing Page {% endblock %}
+{% block content %}
+<h2>{{ msg }}</h2>
+
+<form action="{{'billing'}}" method="POST">
+        <table>
+            <tr>
+            <td>Total No. of Days Spent :</td>
+            <td> <input type="text" name="days" placeholder="Days Spent" required="required"></td>
+            </tr>
+            <tr>
+                <td>Type Of Bed:</td>
+                <td><input type="search"  list="list1" name="bedtype" required="required" multiple="multiple"></td>
+                <datalist id="list1">
+                    <option >General Ward</option>
+                    <option >Semi Sharing</option>
+                    <option >Single Room</option>
+                </datalist>
+            </tr>
+            <tr>
+            <td><input type="submit" name="submit" value="Calculate Bill" required="required"></td>
+            </tr>
+        </table>
+</form>
+<h2>Bill Of Patient based on type of Bed</h2>
+Billing Criteria:<br>
+General ward : Rs. 2000 per day<br>
+Semi sharing : Rs. 4000 per day<br>
+Single Room : Rs. 8000 per day<br>
+<h2>Amount</h2>
+<h2>&#8360;{{list}}</h2>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block title %} Add Diagnostics {% endblock %}
+{% block content %}
+<h2>{{msg}}</h2>
+<form action="{{'add_diag'}}" method="POST">
+        <table>
+            <tr>
+                <td>Diagnosis Test:</td>
+                <td><input type="search"  list="list1" name="test" required="required" multiple="multiple"></td>
+                <datalist id="list1">
+                    <option >Complete Blood Count</option>
+                    <option >Hemoglobin A1C</option>
+                    <option >Lipid Panel</option>
+                    <option >Liver Panel</option>
+                    <option >COVID 19</option>
+                    <option >Diabetes</option>
+                    <option >Malaria</option>
+                </datalist>
+            </tr>
+            <tr>
+            <td><input type="submit" name="submit" value="Get Diagnostics Details" required="required"></td>
+            </tr>
+        </table>
+</form>
+<table border=1 style="width:100%">
+  <tr>
+      <th>Test Id</th>
+      <th>Test Name</th>
+      <th>Charges for Test</th>
+  </tr>
+  <tr>
+      {% for row in value%}
+      <td>{{row.test_id}}</td>
+      <td>{{row.test_name}}</td>
+      <td>{{row.charge_for_test}}</td>
+  </tr>
+      {%endfor%}
+
+</table>
+
+{% endblock %}
