@@ -12,7 +12,7 @@ app.secret_key = 'dsslslslsldsa'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'your password'
-app.config['MYSQL_DB'] = 'pythonlogin'
+app.config['MYSQL_DB'] = 'your database name'
 
 # Intialize MySQL
 mysql = MySQL(app)
